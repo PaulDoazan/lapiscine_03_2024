@@ -124,7 +124,7 @@ for (let i = 0; i < numbers.length; i++) {
     }
 }
 
-console.log(result)
+// console.log(result)
 
 
 // Exercice plus difficile : calculer et afficher la somme des nombres supérieurs à la moyenne
@@ -132,25 +132,44 @@ console.log(result)
 
 // MOYENNE = TOTAL / nbElements
 
-let total = 0
+// let total = 0
 
-for (let i = 0; i < numbers.length; i++) {
-    total += numbers[i]
+// for (let i = 0; i < numbers.length; i++) {
+//     total += numbers[i]
+// }
+
+// let average = total / numbers.length
+
+// total = 0
+
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > average) {
+//         total += numbers[i]
+//     }
+// }
+
+// console.log(total)
+
+
+// MANIPULATION DU DOM
+const stripes = document.querySelectorAll('.stripe')
+
+for (let i = 0; i < stripes.length; i++) {
+    const redColor = Math.random() * 255
+    const greenColor = Math.random() * 255
+    const blueColor = Math.random() * 255
+    stripes[i].style.backgroundColor = `rgb(${redColor}, ${greenColor}, ${blueColor})`
+    // stripes[i].style.backgroundColor = `rgb(${15 * i}, ${8 * i}, 20)`
+    // if (i % 4 === 0) {
+    //     stripes[i].style.backgroundColor = `#155263`
+    // } else if (i % 4 === 1) {
+    //     stripes[i].style.backgroundColor = `#ff6f3c`
+    // } else if (i % 4 === 2) {
+    //     stripes[i].style.backgroundColor = `#ff9a3c`
+    // } else {
+    //     stripes[i].style.backgroundColor = `#ffc93c`
+    // }
 }
-
-let average = total / numbers.length
-
-total = 0
-
-for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > average) {
-        total += numbers[i]
-    }
-}
-
-console.log(total)
-
-
 
 
 
