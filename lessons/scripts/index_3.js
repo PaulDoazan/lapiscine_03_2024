@@ -53,7 +53,6 @@ for (let i = 0; i < numbers.length; i++) {
 
 // console.log(total_1, total_2)
 
-
 let people = [
     {
         name: "Jean",
@@ -96,3 +95,114 @@ let people = [
         hasCar: true
     },
 ]
+
+// Calculer la moyenne des âges de people (le total divisé par le nombre d'éléments)
+let totalAgePeople = 0
+
+for (let i = 0; i < people.length; i++) {
+    totalAgePeople += people[i].age
+}
+
+// Difficulté supplémentaire, afficher la moyenne avec 1 chiffre après la virgule, en utilisant la méthode Math.round()
+
+let ageAverage = totalAgePeople / people.length
+ageAverage = Math.round(ageAverage * 10) / 10
+
+// console.log(ageAverage)
+
+// Afficher le nombre de personnes qui ont une voiture
+let nbPeopleWithCar = 0
+
+for (let i = 0; i < people.length; i++) {
+    if (people[i].hasCar) nbPeopleWithCar++
+}
+
+// console.log(nbPeopleWithCar)
+
+// Difficulté supplémentaire : afficher une phrase "Un tel, un tel, un tel et un tel ont une voiture."
+
+let peopleWithCar = []
+
+for (let i = 0; i < people.length; i++) {
+    if (people[i].hasCar) {
+        peopleWithCar.push(people[i])
+    }
+}
+
+// console.log(peopleWithCar);
+
+
+// LES FONCTIONS
+
+// déclaration d'une fonction
+function logName(parameter) {
+    console.log("Bonjour " + parameter + " Vous avez gagné notre grand prix, appelez au 0033...")
+}
+
+// exécution d'une fonction
+// logName("Paul")
+// logName("Pierre")
+// logName("Simon")
+
+function add(param1, param2) {
+    console.log(param1 + param2)
+}
+
+// add(3, 4)
+// add(200, 41)
+// add(21, 7)
+
+function addWithReturn(p1, p2) {
+    return (p1 + p2)
+}
+
+let resultAddition = addWithReturn(5, 6)
+
+let names_1 = ["Paul", "Pierre", "Simon"]
+let names_2 = ["Mathilde", "Adèle", "Romane"]
+let names_3 = ["Dan", "Sami", "Karim"]
+
+function getAllNamesInSentence(arrParameter) {
+    let sentence = ""
+
+    for (let i = 0; i < arrParameter.length; i++) {
+        sentence += arrParameter[i]
+        if (i !== arrParameter.length - 1) {
+            sentence += ", "
+        }
+    }
+
+    return sentence
+}
+
+let resultSentence = getAllNamesInSentence(names_1)
+let resultSentence2 = getAllNamesInSentence(names_2)
+let resultSentence3 = getAllNamesInSentence(names_3)
+
+// console.log(resultSentence);
+// console.log(resultSentence2);
+// console.log(resultSentence3);
+
+// console.log(resultSentence);
+
+
+let towns = ['Bordeaux', 'Talence', 'Pessac', 'Mérignac']
+
+// Ecrire une fonction qui prend en paramètre un tableau et qui retourne la phrase 'Bordeaux - Talence - Pessac - Mérignac'
+
+const townsSentence = getTownsSentence(towns)
+console.log(townsSentence)
+
+function getTownsSentence(arr) {
+    let sentence = ""
+
+    for (let i = 0; i < arr.length; i++) {
+        sentence += arr[i]
+        if (i !== arr.length - 1) {
+            sentence += " - "
+        }
+
+    }
+
+    return sentence
+}
