@@ -193,16 +193,52 @@ let towns = ['Bordeaux', 'Talence', 'Pessac', 'Mérignac']
 const townsSentence = getTownsSentence(towns)
 console.log(townsSentence)
 
-function getTownsSentence(arr) {
+function getTownsSentence(tab) {
     let sentence = ""
 
-    for (let i = 0; i < arr.length; i++) {
-        sentence += arr[i]
-        if (i !== arr.length - 1) {
+    for (let i = 0; i < tab.length; i++) {
+        sentence += tab[i]
+        if (i !== tab.length - 1) {
             sentence += " - "
         }
-
     }
 
     return sentence
 }
+
+
+let resultFromArrayOfObject = getNamesInSentence(people)
+console.log(resultFromArrayOfObject)
+
+// 'Jean - Mathilde - Adèle ...'
+function getNamesInSentence(arr) {
+    let result = ""
+
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i].name
+        if (i !== arr.length - 1) result += " - "
+    }
+
+    return result
+}
+
+// Exercice++
+// La fonction retourne un tableau des noms des personnes qui n'ont pas de voiture
+
+
+// Précision sur les paramètres
+let myArrayOfObjects = [
+    { name: 'Sara', gender: 'f' },
+    { name: 'Alice', gender: 'f' },
+    { name: 'Antoine', gender: 'm' },
+    { name: 'Stéphane', gender: 'm' },
+]
+
+let objectToTest = myArrayOfObjects[2]
+let gone = "parti"
+
+if (objectToTest.gender === "f") {
+    gone += 'e'
+}
+
+console.log(`${objectToTest.name} est ${gone} !`)
