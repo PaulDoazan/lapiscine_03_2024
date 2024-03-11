@@ -262,7 +262,7 @@ function logCorrectSentence(element) {
 
 // Exercice, trouver le minimum
 let numbers_a = [34, 12, 31, 5, 54, 6]
-let numbers_b = [32, 2, 45, 23, 21, 1, 31, 43]
+let numbers_b = [32, 2, 45, 23, 21, 1]
 
 let minimum_a = numbers_a[0]
 
@@ -272,7 +272,7 @@ for (let i = 1; i < numbers_a.length; i++) {
     }
 }
 
-console.log(minimum_a)
+// console.log(minimum_a)
 
 let minimum_b = numbers_b[0]
 
@@ -282,7 +282,7 @@ for (let i = 1; i < numbers_b.length; i++) {
     }
 }
 
-console.log(minimum_b)
+// console.log(minimum_b)
 // Exercice++
 // Avec le tableau people[], afficher le nom de la personne la plus jeune
 
@@ -293,7 +293,7 @@ console.log(minimum_b)
 let min_a = getMinimum(numbers_a)
 let min_b = getMinimum(numbers_b)
 
-console.log(min_a, min_b)
+// console.log(min_a, min_b)
 
 function getMinimum(arrNumbers) {
     let resultMinimum = arrNumbers[0]
@@ -306,3 +306,73 @@ function getMinimum(arrNumbers) {
 
     return resultMinimum
 }
+
+// écrire la fonction getAverage()
+const avg_a = getAverage(numbers_a)
+const avg_b = getAverage(numbers_b)
+
+// console.log('Mes moyennes : ' + avg_a + ', ' + avg_b)
+
+function getAverage(arr) {
+    let total = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i]
+    }
+
+    const avg = Math.round(total * 100 / arr.length) / 100
+
+    return avg
+}
+
+
+// CALCUL DE L'IMC
+
+const person_1 = {
+    name: "Jean",
+    size: 1.78,
+    weigth: 75
+}
+
+const person_2 = {
+    name: "Marc",
+    size: 1.92,
+    weigth: 86
+}
+
+const person_3 = {
+    name: "Sophie",
+    size: 1.70,
+    weigth: 67
+}
+
+const person_4 = {
+    name: "Julie",
+    size: 1.65,
+    weigth: 67
+}
+
+// formule de l'IMC : poids / (taille * taille)
+
+// Ecrire la fonction qui retourne l'IMC d'une personne.
+// Afficher en console "Un tel a une IMC de ..."
+
+logIMC(person_1)
+logIMC(person_2)
+logIMC(person_3)
+logIMC(person_4)
+
+function getIMC(param) {
+    let imc = Math.round(param.weigth * 100 / (param.size * param.size)) / 100
+    return imc
+}
+
+function logIMC(person) {
+    let imc = getIMC(person)
+    console.log(`${person.name} a un IMC de ${imc}`)
+}
+
+// Exercice++
+// const people_2 = [person_1, person_2, person_3]
+// Modifier la fonction pour prendre en paramètre le tableau d'objets ci-dessus
+// La fonction affichera "Un tel a l'IMC la plus élevée"
