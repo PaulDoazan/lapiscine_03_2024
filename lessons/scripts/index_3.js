@@ -191,7 +191,7 @@ let towns = ['Bordeaux', 'Talence', 'Pessac', 'Mérignac']
 // Ecrire une fonction qui prend en paramètre un tableau et qui retourne la phrase 'Bordeaux - Talence - Pessac - Mérignac'
 
 const townsSentence = getTownsSentence(towns)
-console.log(townsSentence)
+// console.log(townsSentence)
 
 function getTownsSentence(tab) {
     let sentence = ""
@@ -208,7 +208,7 @@ function getTownsSentence(tab) {
 
 
 let resultFromArrayOfObject = getNamesInSentence(people)
-console.log(resultFromArrayOfObject)
+// console.log(resultFromArrayOfObject)
 
 // 'Jean - Mathilde - Adèle ...'
 function getNamesInSentence(arr) {
@@ -234,11 +234,63 @@ let myArrayOfObjects = [
     { name: 'Stéphane', gender: 'm' },
 ]
 
-let objectToTest = myArrayOfObjects[2]
-let gone = "parti"
+// let objectToTest = myArrayOfObjects[3]
+// let gone = "parti"
 
-if (objectToTest.gender === "f") {
-    gone += 'e'
+// if (objectToTest.gender === "f") {
+//     gone += 'e'
+// }
+
+// console.log(`${objectToTest.name} est ${gone} !`)
+
+// Ecrire une fonction qui affiche en console la phrase correcte pour chaque élément du tableau
+
+for (let i = 0; i < myArrayOfObjects.length; i++) {
+    // logCorrectSentence(myArrayOfObjects[i])
 }
 
-console.log(`${objectToTest.name} est ${gone} !`)
+function logCorrectSentence(element) {
+    let gone = "parti"
+
+    if (element.gender === "f") {
+        gone += 'e'
+    }
+
+    console.log(`${element.name} est ${gone} !`)
+}
+
+
+// Exercice, trouver le minimum
+let numbers_a = [34, 12, 31, 5, 54, 6]
+let numbers_b = [32, 2, 45, 23, 21, 1]
+
+let minimum_a = numbers_a[0]
+
+for (let i = 1; i < numbers_a.length; i++) {
+    if (numbers_a[i] < minimum_a) {
+        minimum_a = numbers_a[i]
+    }
+}
+
+console.log(minimum_a)
+
+
+
+let minimum_b = numbers_b[0]
+
+for (let i = 1; i < numbers_b.length; i++) {
+    if (numbers_b[i] < minimum_b) {
+        minimum_b = numbers_b[i]
+    }
+}
+
+console.log(minimum_b)
+// Exercice++
+// Avec le tableau people[], afficher le nom de la personne la plus jeune
+
+
+// Exercice, factoriser le script avec une fonction getMinimum() qui retourne la valeur minimum d'un tableau
+
+function getMinimum(arrNumbers) {
+
+}
