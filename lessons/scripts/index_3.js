@@ -262,7 +262,7 @@ function logCorrectSentence(element) {
 
 // Exercice, trouver le minimum
 let numbers_a = [34, 12, 31, 5, 54, 6]
-let numbers_b = [32, 2, 45, 23, 21, 1]
+let numbers_b = [32, 2, 45, 23, 21, 1, 31, 43]
 
 let minimum_a = numbers_a[0]
 
@@ -273,8 +273,6 @@ for (let i = 1; i < numbers_a.length; i++) {
 }
 
 console.log(minimum_a)
-
-
 
 let minimum_b = numbers_b[0]
 
@@ -291,6 +289,20 @@ console.log(minimum_b)
 
 // Exercice, factoriser le script avec une fonction getMinimum() qui retourne la valeur minimum d'un tableau
 
-function getMinimum(arrNumbers) {
+// let numbers_a = [34, 12, 31, 5, 54, 6]
+let min_a = getMinimum(numbers_a)
+let min_b = getMinimum(numbers_b)
 
+console.log(min_a, min_b)
+
+function getMinimum(arrNumbers) {
+    let resultMinimum = arrNumbers[0]
+
+    for (let i = 1; i < arrNumbers.length; i++) {
+        if (arrNumbers[i] < resultMinimum) {
+            resultMinimum = arrNumbers[i]
+        }
+    }
+
+    return resultMinimum
 }
