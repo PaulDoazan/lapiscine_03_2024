@@ -120,53 +120,20 @@ function biggestIMC(arr) {
 
 
 // INTERACTION AVEC LE DOM
-const btnBlue = document.querySelector(".btn-blue")
-// btnBlue.textContent = "Salut"
-// btnBlue.style.color = "white"
-const btnYellow = document.querySelector(".btn-yellow")
-const btnRed = document.querySelector(".btn-red")
+const btnsArray = document.querySelectorAll(".btn")
+const container = document.querySelector(".container")
 
-btnBlue.isClicked = false
-btnYellow.isClicked = false
-btnRed.isClicked = false
-
-btnBlue.addEventListener("click", onBtnClick)
-btnYellow.addEventListener("click", onBtnClick)
-btnRed.addEventListener("click", onBtnClick)
-
-// let btnBlueClicked = false
-// let btnYellowClicked = false
-// let btnRedClicked = false
+for (let i = 0; i < btnsArray.length; i++) {
+    btnsArray[i].isClicked = false
+    btnsArray[i].addEventListener("click", onBtnClick)
+}
 
 function onBtnClick(e) {
     e.currentTarget.isClicked = !e.currentTarget.isClicked
+    container.style.backgroundColor = e.currentTarget.textContent
+    if (e.currentTarget.isClicked) {
+        e.currentTarget.style.transform = "rotate(180deg)"
+    } else {
+        e.currentTarget.style.transform = "rotate(0deg)"
+    }
 }
-
-// function onBtnBlueClick() {
-//     btnBlueClicked = !btnBlueClicked
-//     if (btnBlueClicked) {
-//         btnBlue.textContent = "Salut"
-//     } else {
-//         btnBlue.textContent = "Hello"
-//     }
-// }
-
-// function onBtnYellowClick() {
-//     if (btnYellowClicked) {
-//         btnYellowClicked = false
-//         btnYellow.textContent = "Salut"
-//     } else {
-//         btnYellowClicked = true
-//         btnYellow.textContent = "Hello"
-//     }
-// }
-
-// function onBtnRedClick() {
-//     if (btnRedClicked) {
-//         btnRedClicked = false
-//         btnRed.textContent = "Salut"
-//     } else {
-//         btnRedClicked = true
-//         btnRed.textContent = "Hello"
-//     }
-// }

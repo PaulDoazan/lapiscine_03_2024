@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.5s;
 }
 
 .stripe {
@@ -29,6 +30,7 @@
     font-family: "Roboto";
     font-weight: 600;
     cursor: pointer;
+    transition: transform 1s;
 }
 
 .btn-blue {
