@@ -121,3 +121,52 @@ function biggestIMC(arr) {
 
 // INTERACTION AVEC LE DOM
 const btnBlue = document.querySelector(".btn-blue")
+// btnBlue.textContent = "Salut"
+// btnBlue.style.color = "white"
+const btnYellow = document.querySelector(".btn-yellow")
+const btnRed = document.querySelector(".btn-red")
+
+btnBlue.isClicked = false
+btnYellow.isClicked = false
+btnRed.isClicked = false
+
+btnBlue.addEventListener("click", onBtnClick)
+btnYellow.addEventListener("click", onBtnClick)
+btnRed.addEventListener("click", onBtnClick)
+
+// let btnBlueClicked = false
+// let btnYellowClicked = false
+// let btnRedClicked = false
+
+function onBtnClick(e) {
+    e.currentTarget.isClicked = !e.currentTarget.isClicked
+}
+
+// function onBtnBlueClick() {
+//     btnBlueClicked = !btnBlueClicked
+//     if (btnBlueClicked) {
+//         btnBlue.textContent = "Salut"
+//     } else {
+//         btnBlue.textContent = "Hello"
+//     }
+// }
+
+// function onBtnYellowClick() {
+//     if (btnYellowClicked) {
+//         btnYellowClicked = false
+//         btnYellow.textContent = "Salut"
+//     } else {
+//         btnYellowClicked = true
+//         btnYellow.textContent = "Hello"
+//     }
+// }
+
+// function onBtnRedClick() {
+//     if (btnRedClicked) {
+//         btnRedClicked = false
+//         btnRed.textContent = "Salut"
+//     } else {
+//         btnRedClicked = true
+//         btnRed.textContent = "Hello"
+//     }
+// }

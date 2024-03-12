@@ -21,10 +21,11 @@
 }
 
 .btn {
+    user-select: none;
     border: 4px black solid;
     padding: 1rem;
     margin: 2rem;
-    border-radius: 10%;
+    border-radius: 10px;
     font-family: "Roboto";
     font-weight: 600;
     cursor: pointer;
