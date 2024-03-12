@@ -80,10 +80,10 @@ const person_4 = {
 // Ecrire la fonction qui retourne l'IMC d'une personne.
 // Afficher en console "Un tel a une IMC de ..."
 
-logIMC(person_1)
-logIMC(person_2)
-logIMC(person_3)
-logIMC(person_4)
+// logIMC(person_1)
+// logIMC(person_2)
+// logIMC(person_3)
+// logIMC(person_4)
 
 function getIMC(param) {
     let imc = Math.round(param.weigth * 100 / (param.size * param.size)) / 100
@@ -96,6 +96,28 @@ function logIMC(person) {
 }
 
 // Exercice++
-// const people_2 = [person_1, person_2, person_3]
-// Modifier la fonction pour prendre en paramètre le tableau d'objets ci-dessus
-// La fonction affichera "Un tel a l'IMC la plus élevée"
+// const people = [person_1, person_2, person_3, person_4]
+// Ecrire une nouvelle fonction qui prend en paramètre le tableau d'objets ci-dessus et retourne l'objet de la personne qui a l'IMC la plus élevée
+
+const people = [person_1, person_2, person_3, person_4]
+
+const result_imc = biggestIMC(people)
+// console.log(`${result_imc.name} a l'IMC la plus élevée`)
+
+function biggestIMC(arr) {
+    let maxImc = getIMC(arr[0])
+    let maxImcPerson = arr[0]
+
+    for (let i = 1; i < arr.length; i++) {
+        if (getIMC(arr[i]) > maxImc) {
+            maxImc = getIMC(arr[i])
+            maxImcPerson = arr[i]
+        }
+    }
+
+    return maxImcPerson
+}
+
+
+// INTERACTION AVEC LE DOM
+const btnBlue = document.querySelector(".btn-blue")
