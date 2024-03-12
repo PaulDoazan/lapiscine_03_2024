@@ -30,7 +30,7 @@
     font-family: "Roboto";
     font-weight: 600;
     cursor: pointer;
-    transition: transform 1s;
+    transition: all 0.5s;
 }
 
 .btn-blue {

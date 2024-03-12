@@ -128,9 +128,25 @@ for (let i = 0; i < btnsArray.length; i++) {
     btnsArray[i].addEventListener("click", onBtnClick)
 }
 
+// Exercice : quand on clique sur un bouton, on change la couleur du container de façon aléatoire
+// pour générer de l'aléatoire : Math.random() => 0 < nb < 1
+// en css, on passera une couleur en rgb(0, 0, 0) => rgb(124, 43, 210)
+
 function onBtnClick(e) {
     e.currentTarget.isClicked = !e.currentTarget.isClicked
-    container.style.backgroundColor = e.currentTarget.textContent
+
+    let redColor = Math.random() * 255
+    let greenColor = Math.random() * 255
+    let blueColor = Math.random() * 255
+
+    container.style.backgroundColor = `rgb(${redColor},${greenColor},${blueColor})`
+
+    // Dernier exercice : en cliquant sur 1 bouton, on change la couleur de chacun des trois boutons avec 3 couleurs aléatoires différentes
+    for (let i = 0; i < btnsArray.length; i++) {
+        let element = btnsArray[i]
+        element.style.backgroundColor = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
+    }
+
     if (e.currentTarget.isClicked) {
         e.currentTarget.style.transform = "rotate(180deg)"
     } else {
