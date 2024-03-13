@@ -2,11 +2,12 @@
 const numberDivs = document.querySelectorAll('.number')
 const btnDivs = document.querySelectorAll('.btn')
 const resultDiv = document.querySelector('.result')
+const refreshDiv = document.querySelector('.refresh')
 
 let correctResult = 0
 
 for (let i = 0; i < numberDivs.length; i++) {
-    const random = Math.round(Math.random() * 20)
+    const random = Math.round(Math.random() * 10)
     numberDivs[i].textContent = random
 
     // Calcul du résultat
@@ -37,8 +38,15 @@ btnDivs[randomPosition].textContent = correctResult
 
 resultDiv.textContent = "..."
 
+// Implémenter la fonction callback onBtnClick, avec le test du résultat correct, et l'affichage dans la balise result
 function onBtnClick(e) {
-    console.log(e.currentTarget.textContent)
+    if (e.currentTarget.textContent == correctResult) {
+        resultDiv.textContent = "BRAVO !"
+        refreshDiv.style.display = "block"
+    } else {
+        resultDiv.textContent = "Essaie encore !"
+        refreshDiv.style.display = "none"
+    }
 }
 
 function getRandomBetweenNumbers(min, max) {

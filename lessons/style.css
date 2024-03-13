@@ -78,9 +78,23 @@
     background-color: #f95959;
 }
 
-.result {
+.result-container {
     margin-top: 2rem;
-    font-size: 3rem;
+    display: flex;
+    align-items: center;
     font-family: "Roboto";
+    font-size: 3rem;
+}
+
+.result {
+    margin-right: 2rem;
     font-weight: 600;
+}
+
+.refresh {
+    font-size: 2rem;
+    border: 4px black solid;
+    padding: 1rem;
+    border-radius: 10px;
+    display: none;
 }
