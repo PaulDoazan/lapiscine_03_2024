@@ -12,6 +12,8 @@ for (let i = 0; i < btnDivs.length; i++) {
 
 // on déclare l'event listener sur le bouton refresh
 
+refreshDiv.addEventListener('click', init)
+
 init()
 
 // Implémenter la fonction callback onBtnClick, avec le test du résultat correct, et l'affichage dans la balise result
@@ -30,6 +32,9 @@ function getRandomBetweenNumbers(min, max) {
 }
 
 function init() {
+    correctResult = 0
+    refreshDiv.style.display = "none"
+
     for (let i = 0; i < numberDivs.length; i++) {
         const random = Math.round(Math.random() * 10)
         numberDivs[i].textContent = random
