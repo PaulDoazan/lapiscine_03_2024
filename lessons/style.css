@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+body {
+    user-select: none;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -54,7 +58,6 @@
 }
 
 .btn {
-    user-select: none;
     border: 4px black solid;
     padding: 1rem;
     margin: 2rem;
@@ -97,4 +100,5 @@
     padding: 1rem;
     border-radius: 10px;
     display: none;
+    cursor: pointer;
 }
