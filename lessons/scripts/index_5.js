@@ -16,11 +16,20 @@ for (let i = 0; i < numberDivs.length; i++) {
 // On remplace la valeur des btns par la valeur correcte à laquelle on ajoute/soustrait une marge d'erreur
 // 1. On définit de façon aléatoire la marge d'erreur entre 1 et 5
 // 2. On soustrait/ajoute cette marge d'erreur à correctResult et on l'affecte au textContent de chaque bouton
+let randomMargin = getRandomBetweenNumbers(1, 2)
 
-let randomMargin = getRandomBetweenNumbers(1, 5)
-
+// Ajouter un écouteur d'événement de type "click" et dans la fonction de callback, afficher en console la valeur du bouton
 for (let i = 0; i < btnDivs.length; i++) {
-    btnDivs[i].textContent = Math.round(Math.random() * 20)
+    btnDivs[i].addEventListener("click", onBtnClick)
+
+    if (Math.random() < 0.5) {
+        btnDivs[i].textContent = correctResult + randomMargin
+    } else {
+        btnDivs[i].textContent = correctResult - randomMargin
+    }
+
+    // On recalcule une marge aléatoire
+    randomMargin = getRandomBetweenNumbers(randomMargin + 1, randomMargin + 2)
 }
 
 let randomPosition = Math.round(Math.random() * (btnDivs.length - 1))
@@ -28,6 +37,9 @@ btnDivs[randomPosition].textContent = correctResult
 
 resultDiv.textContent = "..."
 
+function onBtnClick(e) {
+    console.log(e.currentTarget.textContent)
+}
 
 function getRandomBetweenNumbers(min, max) {
     return Math.round((Math.random() * (max - min)) + min)
