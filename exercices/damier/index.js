@@ -19,7 +19,6 @@ const nbRow = 5
 
 const grid = []
 
-
 for (let i = 0; i < nbRow; i++) {
     const row = document.createElement('div')
     row.className = "row"
@@ -29,7 +28,6 @@ for (let i = 0; i < nbRow; i++) {
     grid.push(rowArray)
 
     for (let j = 0; j < nbCol; j++) {
-        console.log(i, j)
         let colors
         if (i % 2) {
             colors = ["white", "black"]
@@ -43,6 +41,7 @@ for (let i = 0; i < nbRow; i++) {
     }
 }
 
+console.log(grid)
 // -> col 4 et row 2
 grid[2][4].style.backgroundColor = "yellow"
 
