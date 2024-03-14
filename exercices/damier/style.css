@@ -24,8 +24,7 @@ body {
     display: flex;
 }
 
-.square {
-    width: 100px;
-    height: 100px;
-    background-color: black;
+.squareSize {
+    width: 60px;
+    height: 60px;
 }

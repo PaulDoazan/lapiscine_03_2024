@@ -10,11 +10,47 @@
 // }
 
 // CREATION D'ELEMENT DU DOM
-const row = document.querySelector('.row')
+// const row = document.querySelector('.row')
+const container = document.querySelector('.container')
 
 // Consigne : créer 5 éléments noir ou blanc insérés dans la div row
-const square = document.createElement('div')
-square.style.width = "80px"
-square.style.height = "80px"
-square.style.backgroundColor = "white"
-row.appendChild(square)
+const nbCol = 6
+const nbRow = 5
+
+const grid = []
+
+
+for (let i = 0; i < nbRow; i++) {
+    const row = document.createElement('div')
+    row.className = "row"
+    container.appendChild(row)
+
+    const rowArray = []
+    grid.push(rowArray)
+
+    for (let j = 0; j < nbCol; j++) {
+        console.log(i, j)
+        let colors
+        if (i % 2) {
+            colors = ["white", "black"]
+        } else {
+            colors = ["black", "white"]
+        }
+        let color = colors[j % 2]
+
+        const squareDiv = createSquare(color, row)
+        rowArray.push(squareDiv)
+    }
+}
+
+// -> col 4 et row 2
+grid[2][4].style.backgroundColor = "yellow"
+
+function createSquare(colorParam, parentNode) {
+    const square = document.createElement('div')
+    square.className = "squareSize"
+    square.style.backgroundColor = colorParam
+    parentNode.appendChild(square)
+
+    return square
+}
