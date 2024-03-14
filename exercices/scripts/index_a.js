@@ -1,0 +1,1 @@
+console.log("On est bien dans le fichier js des exos")
