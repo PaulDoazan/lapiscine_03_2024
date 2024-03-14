@@ -28,27 +28,28 @@ for (let i = 0; i < nbRow; i++) {
     grid.push(rowArray)
 
     for (let j = 0; j < nbCol; j++) {
-        let colors
-        if (i % 2) {
-            colors = ["white", "black"]
-        } else {
-            colors = ["black", "white"]
-        }
-        let color = colors[j % 2]
-
-        const squareDiv = createSquare(color, row)
+        const squareDiv = createSquare(row)
         rowArray.push(squareDiv)
     }
 }
 
 console.log(grid)
 // -> col 4 et row 2
-grid[2][4].style.backgroundColor = "yellow"
+// grid[2][4].style.backgroundColor = "yellow"
 
-function createSquare(colorParam, parentNode) {
+// Implémenter un puissance 4
+// Chaque case est cliquable
+// Quand on clique, on alterne entre couleur jaune et couleur rouge
+// Une case cliquée n'est plus cliquable
+// On peut cliquer sur une case en l'air
+
+function createSquare(parentNode) {
     const square = document.createElement('div')
     square.className = "squareSize"
-    square.style.backgroundColor = colorParam
+    const innerSquare = document.createElement('div')
+    innerSquare.className = "innerCircle"
+    square.appendChild(innerSquare)
+    square.style.backgroundColor = "blue"
     parentNode.appendChild(square)
 
     return square
