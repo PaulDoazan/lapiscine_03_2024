@@ -1,4 +1,5 @@
 import pizzas from "../data/pizzas.json" assert {type: "json"}
+import pizzas_2 from "../data/pizzas_2.json" assert {type: "json"}
 
 // Afficher dans la console une chaîne de caractère de tous les ingrédients de la dernière pizza : "mozzarella, tomate..."
 let result = ""
@@ -15,17 +16,29 @@ for (let i = 0; i < ingredientsArray.length; i++) {
 console.log(result)
 
 // Afficher le nom et les ingrédients de la pizza la plus chère
-let maxPizza = pizzas[0]
+const mostExpPizza = getMostExpensivePizza(pizzas)
+console.log(mostExpPizza.name)
 
-// En paramètre, un tableau de pizzas
-function getMostExpensivePizza() {
+// En paramètre, un tableau de pizzas, on retourne la pizza la plus chère
+function getMostExpensivePizza(arrPizzas) {
+    let maxPizza = arrPizzas[0]
 
-}
-
-for (let i = 1; i < pizzas.length; i++) {
-    if (pizzas[i].price > maxPizza.price) {
-        maxPizza = pizzas[i]
+    for (let i = 1; i < arrPizzas.length; i++) {
+        if (arrPizzas[i].price > maxPizza.price) {
+            maxPizza = arrPizzas[i]
+        }
     }
+
+    return maxPizza
 }
 
-console.log(`La ${maxPizza.name} a pour ingrédients ${maxPizza.ingredients} et coûte ${maxPizza.price}`)
+// console.log(`La ${maxPizza.name} a pour ingrédients ${maxPizza.ingredients} et coûte ${maxPizza.price}`)
+
+// Ecrire une fonction qui cherche la pizza la plus chère parmi 2 tableaux passés en paramètre
+
+const ultimatePizza = getUltimatePizza(pizzas, pizzas_2)
+console.log(ultimatePizza.name)
+
+function getUltimatePizza(arr1, arr2) {
+
+}
