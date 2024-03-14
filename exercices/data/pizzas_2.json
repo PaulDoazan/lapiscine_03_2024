@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Calzone",
+        "price": 21.50,
+        "ingredients": [
+            "mozzarella",
+            "tomate",
+            "huile d'olive"
+        ],
+        "baseTomate": true
+    },
+    {
+        "name": "Anchois",
+        "price": 19,
+        "ingredients": [
+            "mozzarella",
+            "tomate",
+            "anchois",
+            "jambon",
+            "champignons"
+        ],
+        "baseTomate": true
+    }
+]
