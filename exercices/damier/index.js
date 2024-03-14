@@ -48,6 +48,10 @@ console.log(grid)
 // Une case cliquée n'est plus cliquable
 // On peut cliquer sur une case en l'air
 
+// BONUS casse-tête
+// On clique sur une case mais c'est la case la plus basse disponible dans la même colonne qui change de couleur
+// On implémente un bouton retour au coup précédent, qui nécessite un tableau historic = []
+
 function createSquare(parentNode) {
     const square = document.createElement('div')
     square.className = "squareSize"
