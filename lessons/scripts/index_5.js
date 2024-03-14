@@ -10,14 +10,13 @@ for (let i = 0; i < btnDivs.length; i++) {
     btnDivs[i].addEventListener("click", onBtnClick)
 }
 
-// on déclare l'event listener sur le bouton refresh
-
 refreshDiv.addEventListener('click', init)
 
 init()
 
 // Implémenter la fonction callback onBtnClick, avec le test du résultat correct, et l'affichage dans la balise result
 function onBtnClick(e) {
+    console.log(`J'ai cliqué sur un bouton`)
     if (e.currentTarget.textContent == correctResult) {
         resultDiv.textContent = "BRAVO !"
         refreshDiv.style.display = "block"
@@ -48,7 +47,6 @@ function init() {
     // 2. On soustrait/ajoute cette marge d'erreur à correctResult et on l'affecte au textContent de chaque bouton
     let randomMargin = getRandomBetweenNumbers(1, 2)
 
-    // Ajouter un écouteur d'événement de type "click" et dans la fonction de callback, afficher en console la valeur du bouton
     for (let i = 0; i < btnDivs.length; i++) {
         if (Math.random() < 0.5) {
             btnDivs[i].textContent = correctResult + randomMargin
