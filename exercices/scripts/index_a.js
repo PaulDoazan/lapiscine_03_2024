@@ -13,3 +13,19 @@ for (let i = 0; i < ingredientsArray.length; i++) {
 }
 
 console.log(result)
+
+// Afficher le nom et les ingrédients de la pizza la plus chère
+let maxPizza = pizzas[0]
+
+// En paramètre, un tableau de pizzas
+function getMostExpensivePizza() {
+
+}
+
+for (let i = 1; i < pizzas.length; i++) {
+    if (pizzas[i].price > maxPizza.price) {
+        maxPizza = pizzas[i]
+    }
+}
+
+console.log(`La ${maxPizza.name} a pour ingrédients ${maxPizza.ingredients} et coûte ${maxPizza.price}`)
