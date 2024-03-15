@@ -42,3 +42,16 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.btn-refresh {
+    width: 80px;
+    height: 50px;
+    top: 20vh;
+    left: 85vw;
+    border-radius: 5px;
+    background-color: crimson;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

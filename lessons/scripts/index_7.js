@@ -12,7 +12,6 @@ function onContainerDown(e) {
     const myDiv = document.createElement("div")
     myDiv.textContent = "Hello world"
     myDiv.className = "circle"
-    myDiv.isOpaque = true
     myDiv.addEventListener('mouseover', onCircleOver)
     container.appendChild(myDiv)
 }
@@ -22,13 +21,16 @@ function onCircleOver(e) {
     // e.currentTarget.style.display = "none"
     // e.currentTarget.remove()
 
-    if (e.currentTarget.isOpaque) {
-        e.currentTarget.style.opacity = 0.3
-    } else {
-        e.currentTarget.style.opacity = 1
-    }
+    // la propriété isTransparent n'existe pas à la première interaction, elle est undefined
+    // if (e.currentTarget.isTransparent) {
+    //     e.currentTarget.style.opacity = 1
+    // } else {
+    //     e.currentTarget.style.opacity = 0.3
+    // }
 
-    e.currentTarget.isOpaque = !e.currentTarget.isOpaque
+    e.currentTarget.style.opacity = e.currentTarget.isTransparent ? 1 : 0.3
+    // Ici, on convertit !undefined => true, donc on créé à la volée la propriété isTransparent
+    e.currentTarget.isTransparent = !e.currentTarget.isTransparent
 }
 
 // Ajouter le listener pour faire "disparaître" un cercle quand on clique dessus
