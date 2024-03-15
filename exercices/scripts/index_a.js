@@ -139,13 +139,26 @@ console.log(pizzas.map(el => el.baseTomate ? "Pizza a la tomate : " + el.name : 
 // console.log(names)
 
 const numbers = [2, 5, 34, 32, 12]
+
+// a l'aide d'un .map, afficher un tableau qui contient tous les doubles de numbers
 const doubles = numbers.map((number) => {
     return number * 2
 })
 
-console.log(doubles)
+// les elements qui ne remplissent pas la condition donne quand meme un undefined
+const smallNumbers = numbers.map((number) => {
+    if (number < 10) return number
+})
 
-// a l'aide d'un .map, afficher un tableau qui contient tous les doubles de numbers
+// const filteredNumbers = numbers.filter((element) => {
+//     return element < 10
+// })
+
+const filteredNumbers = numbers.filter(element => element < 10)
+console.log(filteredNumbers)
+
+// a l'aide d'un filter, refaire l'exercice pour filtrer les pizzas avec tomate
+
 
 
 
