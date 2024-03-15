@@ -159,7 +159,29 @@ console.log(filteredNumbers)
 
 // a l'aide d'un filter, refaire l'exercice pour filtrer les pizzas avec tomate
 
+// const pizzasWithTomato = pizzas.filter(el => el.baseTomate)
+// const pizzasTomatoNames = pizzasWithTomato.map(el => el.name)
 
+console.log(pizzas.filter(el => el.baseTomate).map(el => el.name))
 
+let person1 = {
+    name: 'Max',
+    vehicle: 'car',
+    town: 'Paris'
+}
 
+let person2 = {
+    name: 'Nathalie',
+    vehicle: 'bike',
+    town: 'Bordeaux'
+}
 
+let person3 = {
+    name: 'Cathy',
+    vehicle: 'car',
+    town: 'Lyon'
+}
+
+const people = [person1, person2, person3]
+
+// a l'aide de la methode filter() et map(), afficher les noms des gens qui ont une voiture
