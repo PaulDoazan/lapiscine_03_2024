@@ -185,3 +185,7 @@ let person3 = {
 const people = [person1, person2, person3]
 
 // a l'aide de la methode filter() et map(), afficher les noms des gens qui ont une voiture
+
+let peopleWithCar = people.filter(el => el.vehicle === "car")
+peopleWithCar = peopleWithCar.map(el => el.name)
+console.log(peopleWithCar)
