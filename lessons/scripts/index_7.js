@@ -3,17 +3,20 @@ console.log("start day 7")
 // const body = document.querySelector('body')
 const container = document.querySelector('.container')
 const btn = document.querySelector('.btn')
+const btnRefresh = document.querySelector('.btn-refresh')
 
-btn.addEventListener("mousedown", onContainerDown)
+btn.addEventListener("mousedown", onBtnAddDown)
+btnRefresh.addEventListener("mousedown", onRefreshDown)
 
-const divs = []
+let divs = []
 
-function onContainerDown(e) {
+function onBtnAddDown(e) {
     const myDiv = document.createElement("div")
     myDiv.textContent = "Hello world"
     myDiv.className = "circle"
     myDiv.addEventListener('mouseover', onCircleOver)
     container.appendChild(myDiv)
+    divs.push(myDiv)
 }
 
 function onCircleOver(e) {
@@ -31,6 +34,14 @@ function onCircleOver(e) {
     e.currentTarget.style.opacity = e.currentTarget.isTransparent ? 1 : 0.3
     // Ici, on convertit !undefined => true, donc on créé à la volée la propriété isTransparent
     e.currentTarget.isTransparent = !e.currentTarget.isTransparent
+}
+
+function onRefreshDown(e) {
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = "black"
+    }
+    divs = []
+    // container.innerHTML = ""
 }
 
 // Ajouter le listener pour faire "disparaître" un cercle quand on clique dessus
