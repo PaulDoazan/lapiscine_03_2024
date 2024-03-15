@@ -10,13 +10,30 @@ btnRefresh.addEventListener("mousedown", onRefreshDown)
 
 let divs = []
 
+let randomColor = "red"
+
+const delay = 300
+
 function onBtnAddDown(e) {
-    const myDiv = document.createElement("div")
-    myDiv.textContent = "Hello world"
-    myDiv.className = "circle"
-    myDiv.addEventListener('mouseover', onCircleOver)
-    container.appendChild(myDiv)
-    divs.push(myDiv)
+    for (let j = 0; j < 45; j++) {
+        const row = document.createElement("div")
+        row.className = "alignementHorizontal"
+        container.appendChild(row)
+
+        const rowArray = []
+        divs.push(rowArray)
+        for (let i = 0; i < 70; i++) {
+            setTimeout(function () {
+                const myDiv = document.createElement("div")
+                myDiv.className = "circle"
+                myDiv.addEventListener('mouseover', onCircleOver)
+                row.appendChild(myDiv)
+                rowArray.push(myDiv)
+            }, (delay * j) + (delay / 70) * i)
+        }
+    }
+
+
 }
 
 function onCircleOver(e) {
@@ -31,16 +48,20 @@ function onCircleOver(e) {
     //     e.currentTarget.style.opacity = 0.3
     // }
 
-    e.currentTarget.style.opacity = e.currentTarget.isTransparent ? 1 : 0.3
-    // Ici, on convertit !undefined => true, donc on créé à la volée la propriété isTransparent
-    e.currentTarget.isTransparent = !e.currentTarget.isTransparent
+    e.currentTarget.style.backgroundColor = randomColor
+
+    // e.currentTarget.style.opacity = e.currentTarget.isTransparent ? 1 : 0.3
+    // // Ici, on convertit !undefined => true, donc on créé à la volée la propriété isTransparent
+    // e.currentTarget.isTransparent = !e.currentTarget.isTransparent
 }
 
 function onRefreshDown(e) {
-    for (let i = 0; i < divs.length; i++) {
-        divs[i].style.backgroundColor = "black"
-    }
-    divs = []
+    randomColor = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
+    btnRefresh.style.backgroundColor = randomColor
+    // for (let i = 0; i < divs.length; i++) {
+    //     divs[i].style.backgroundColor = "black"
+    // }
+    // divs = []
     // container.innerHTML = ""
 }
 
