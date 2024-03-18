@@ -21,14 +21,21 @@ const bestMovie = getBestMovie(movies)
 // console.log(bestMovie.title)
 
 // difficulté supplémentaire : on peut utiliser la méthode de tableau .sort()
+
+console.log(bestMovie.title);
+
 function getBestMovie(arr) {
-    let best = arr[0]
-    arr.forEach((element) => {
-        if (element.rate > best.rate) {
-            best = element
-        }
-    })
-    return best
+    // let best = arr[0]
+    // arr.forEach((element) => {
+    //     if (element.rate > best.rate) {
+    //         best = element
+    //     }
+    // })
+    // return best
+
+    return arr.sort((a, b) => b.rate - a.rate)[0];
+
+    //return arr[0]
 }
 
 // e. Logger le titre du film le plus ancien
