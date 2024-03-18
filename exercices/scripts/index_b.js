@@ -70,13 +70,40 @@ function getTitles(arr) {
 }
 
 // 2. Ecrire une fonction qui prend en parametre une annee et un tableau (movies), et qui retourne un nouveau tableau de titres de film de l'annee specifiee
-
 let resultArr = getMoviesByYear(movies, 1994)
 console.log(resultArr)
 
 function getMoviesByYear(arr, yearParam) {
+    const filteredArray = arr.filter(el => {
+        return el.year === yearParam
+    })
 
+    const mappedArray = filteredArray.map(el => el.title)
+
+    return mappedArray
 }
 
 // 3. Ecrire une fonction qui prend en parametre un realisateur et un tableau (movies), et qui retourne un nouveau tableau de tous les titres de films de ce realisateur
+const resMoviesDirector = getMoviesByDirector(movies, "Christopher Nolan")
+console.log(resMoviesDirector);
+
+function getMoviesByDirector(arr, directorParam) {
+    const filteredArray = arr.filter(el => {
+        return el.director === directorParam
+    })
+
+    const mappedArray = filteredArray.map(el => el.actors)
+    return mappedArray.flat()
+
+    // const emptyArray = []
+
+    // for (let i = 0; i < mappedArray.length; i++) {
+    //     for (let j = 0; j < mappedArray[i].length; j++) {
+    //         emptyArray.push(mappedArray[i][j])
+    //     }
+    // }
+
+    // return emptyArray;
+}
+
 // -> retourne un nouveau tableau de tous les noms d'acteurs des films de ce realisateur
