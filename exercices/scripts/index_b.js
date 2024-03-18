@@ -62,9 +62,21 @@ function getAllMoviesWithMoreThan2Actors(arr) {
 }
 
 // 1. Ecrire une fonction qui prend en parametre le tableau movies et qui retourne un nouveau tableau de tous les titres de films
+const resTitles = getTitles(movies)
+console.log(resTitles);
 
+function getTitles(arr) {
+    return arr.map(el => el.title)
+}
 
 // 2. Ecrire une fonction qui prend en parametre une annee et un tableau (movies), et qui retourne un nouveau tableau de titres de film de l'annee specifiee
 
-// let resultArr = getMoviesByYear(movies, 1994)
+let resultArr = getMoviesByYear(movies, 1994)
+console.log(resultArr)
+
+function getMoviesByYear(arr, yearParam) {
+
+}
+
 // 3. Ecrire une fonction qui prend en parametre un realisateur et un tableau (movies), et qui retourne un nouveau tableau de tous les titres de films de ce realisateur
+// -> retourne un nouveau tableau de tous les noms d'acteurs des films de ce realisateur
