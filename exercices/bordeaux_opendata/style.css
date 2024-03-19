@@ -78,7 +78,7 @@ button:hover {
 
 .place {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .place-infos {
@@ -104,13 +104,11 @@ button:hover {
     left: 4px;
     height: 22px;
     width: 93%;
+    transform: scaleX(0.01);
     transform-origin: left;
     transition: transform 3s ease-in-out;
     background-color: var(--blue5);
 }
-
-
-
 
 /* SPINNER */
 .lds-ellipsis {

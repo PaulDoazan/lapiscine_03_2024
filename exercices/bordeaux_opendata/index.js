@@ -39,8 +39,18 @@ async function fetchData() {
 function displayData(pools) {
     // on rafraîchit le poolsContainer
     poolsContainer.innerHTML = ""
+
+    // Implémenter le tri du tableau par odre décroissant d'entrées
+    // pools.sort((a, b) => {
+    //     return b.entree - a.entree
+    // })
+
+    // Implémenter le tri du tableau par odre décroissant de ratio d'occupation
+    pools.sort((a, b) => {
+        return b.entree / b.fmizonmax - a.entree / a.fmizonmax
+    })
+
     pools.forEach(pool => {
-        console.log(pool.fmizonmax)
         const div = document.createElement('div')
         //<div class="place" data-index="0">
         div.classList.add("place")
@@ -57,10 +67,11 @@ function displayData(pools) {
 
     const visitorDiagrams = document.querySelectorAll('.visitors')
 
-    visitorDiagrams.forEach((element, index) => {
-        const ratio = pools[index].entree / pools[index].fmizonmax
-        element.style.transform = `scaleX(${ratio})`
-    })
+    setTimeout(() => {
+        visitorDiagrams.forEach((element, index) => {
+            const ratio = pools[index].entree / pools[index].fmizonmax
+            element.style.transform = `scaleX(${ratio})`
+        })
+    }, 10)
 
-    console.log(pools)
 }
