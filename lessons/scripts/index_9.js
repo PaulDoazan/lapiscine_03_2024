@@ -36,13 +36,38 @@ arr[1] = 34
 // On ne peut pas écraser une constante
 // person_2 = { name: "Wam" }
 
-const person_1 = {
-    name: "DOAZAN",
-    firstname: "Paul"
+// const person_1 = {
+//     name: "DOAZAN",
+//     firstname: "Paul"
+// }
+
+// const person_2 = {
+//     name: "DUPONT",
+//     firstname: "Bastien"
+// }
+
+
+// Aparté sur les CLASSES
+
+class Person {
+    constructor(nameParam, firstnameParam) {
+        this.name = nameParam
+        this.firstname = firstnameParam
+    }
+    getName() {
+        console.log(`hello, my name is ${this.firstname} ${this.name}`)
+    }
 }
 
-// Assignation par référence
-const person_2 = person_1
-person_2.firstname = "Pierre"
+const person_1 = new Person("DOAZAN", "Paul")
+const person_2 = new Person("DUPONT", "Bastien")
 
-console.log(person_1)
+console.log(person_2.getName())
+
+
+
+// Assignation par référence
+// const person_2 = person_1
+// person_2.firstname = "Pierre"
+
+// console.log(person_1)
