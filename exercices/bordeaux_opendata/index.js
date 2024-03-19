@@ -14,10 +14,10 @@ function onBtnClick() {
 
 function btnChange(btnState) {
     if (btnState === "search") {
-        button.textContent = "..."
+        button.innerHTML = `<div class="lds-ellipsis"><div></div><div></div><div></div><div>`
         button.classList.add('searching')
     } else {
-        button.textContent = "Actualiser"
+        button.innerHTML = "Actualiser"
         button.classList.remove('searching')
     }
 
@@ -40,20 +40,27 @@ function displayData(pools) {
     // on rafraîchit le poolsContainer
     poolsContainer.innerHTML = ""
     pools.forEach(pool => {
-        console.log(pool)
+        console.log(pool.fmizonmax)
         const div = document.createElement('div')
         //<div class="place" data-index="0">
         div.classList.add("place")
         div.innerHTML = `
-        <div class="place-name">nom de la piscine</div>
-        <div class="place-infos">... / ...</div>
-        <div class="diagram-container">
-          <div class="capacity"></div>
-          <div class="visitors"></div>
-        </div>
+            <div class="place-name">${pool.etablissement_etalib} (${pool.fmizonlib})</div>
+            <div class="place-infos">${pool.entree} / ${pool.fmizonmax}</div>
+            <div class="diagram-container">
+                <div class="capacity"></div>
+                <div class="visitors"></div>
+            </div>
         `
         poolsContainer.appendChild(div)
     });
+
+    const visitorDiagrams = document.querySelectorAll('.visitors')
+
+    visitorDiagrams.forEach((element, index) => {
+        const ratio = pools[index].entree / pools[index].fmizonmax
+        element.style.transform = `scaleX(${ratio})`
+    })
 
     console.log(pools)
 }
