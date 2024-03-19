@@ -26,3 +26,28 @@ input3.addEventListener('input', (e) => {
     }
     textToDisplay3.textContent = e.target.value
 })
+
+
+
+// EXO 3 => difficile
+
+
+// EXO 4
+// on interagit directement avec le formulaire, pas le button
+const textToDisplay2 = document.querySelector('.text-to-display-2')
+const form2 = document.querySelector('.form-2')
+const input2 = document.querySelector('.input-2')
+
+form2.addEventListener('submit', (e) => {
+    e.preventDefault()
+    textToDisplay2.textContent = input2.value
+})
+
+
+// EXO 5
+const textToDisplay5 = document.querySelector('.text-to-display-5')
+const input5 = document.querySelector('.input-5')
+
+input5.addEventListener('input', (e) => {
+    textToDisplay5.textContent = e.currentTarget.value
+})
