@@ -47,6 +47,7 @@
         "director": "Christopher Nolan",
         "rate": 7.5,
         "actors": [
+            "Tom Hanks",
             "Leonardo DiCaprio",
             "Joseph Gordon-Levitt"
         ]
@@ -59,7 +60,8 @@
         "actors": [
             "Jack Nicholson",
             "Shelley Duvall",
-            "Danny Lloyd"
+            "Danny Lloyd",
+            "Tom Hanks"
         ]
     }
 ]

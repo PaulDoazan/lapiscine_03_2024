@@ -123,6 +123,24 @@ function getMoviesByDirector(arr, directorParam) {
 const movie = getMovieByTitle(movies, "Interstellar")
 console.log(movie)
 
-function getMovieByTitle(arr, title) {
+function getMovieByTitle(arr, titleParam) {
+    // let movie = "not found"
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i].title === titleParam) {
+    //         movie = arr[i]
+    //         break
+    //     }
+    // }
 
+    // arr.forEach(el => {
+    //     if (el.title === titleParam) {
+    //         movie = el
+    //     }
+    // })
+
+    const movies = arr.find(el => el.title === titleParam)
+    return movies
 }
+
+
+// écrire une fonction qui prend en paramètre le tableau movies, le nom d'un acteur, et qui me retourne un tableau des films dans lesquels joue cet acteur
