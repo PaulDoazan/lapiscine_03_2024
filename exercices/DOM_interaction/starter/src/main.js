@@ -9,7 +9,6 @@ btns_1.forEach(btn => {
     })
 })
 
-
 // EXO 2
 const textToDisplay3 = document.querySelector('.text-to-display-3')
 const input3 = document.querySelector('.input-3')
@@ -50,4 +49,20 @@ const input5 = document.querySelector('.input-5')
 
 input5.addEventListener('input', (e) => {
     textToDisplay5.textContent = e.currentTarget.value
+})
+
+// EXO 6
+const textToDisplay6 = document.querySelector('.text-to-display-6')
+const select6 = document.querySelector('.select-6')
+
+select6.addEventListener('change', (e) => {
+    textToDisplay6.textContent = e.currentTarget.value
+})
+
+// EXO 7
+const textToDisplay7 = document.querySelector('.div-to-color-7')
+const input7 = document.querySelector('.input-7')
+
+input7.addEventListener('input', (e) => {
+    textToDisplay7.style.backgroundColor = e.currentTarget.value
 })

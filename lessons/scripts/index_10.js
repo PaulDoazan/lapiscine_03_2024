@@ -27,7 +27,6 @@ let person = {
 // let firstname = person.firstname
 // let lastname = person.lastname
 // let age = person.age
-
 let { firstname } = person
 firstname += "ine"
 
