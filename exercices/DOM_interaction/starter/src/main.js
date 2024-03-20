@@ -26,9 +26,26 @@ input3.addEventListener('input', (e) => {
     textToDisplay3.textContent = e.target.value
 })
 
-
-
 // EXO 3 => difficile
+const textToDisplay = document.querySelector('.text-to-display-4')
+const inputs_4 = document.querySelectorAll('.input-4')
+
+inputs_4.forEach(inputDate => {
+    inputDate.addEventListener('change', (e) => {
+        let str1 = inputs_4[0].value
+        let str2 = inputs_4[1].value
+        // const words_0 = input4_0_Str.split('-')
+        // const words_1 = input4_1_Str.split('-')
+
+        // let diff = Number(words_1[2]) - Number(words_0[2])
+        const d1 = new Date(str1)
+        const d2 = new Date(str2)
+
+        const diff = Math.abs((d2 - d1) / (1000 * 60 * 60 * 24))
+
+        textToDisplay.textContent = `Trip last : ${diff} days`
+    })
+})
 
 
 // EXO 4
@@ -65,4 +82,24 @@ const input7 = document.querySelector('.input-7')
 
 input7.addEventListener('input', (e) => {
     textToDisplay7.style.backgroundColor = e.currentTarget.value
+})
+
+// EXO 8
+const btns_8 = document.querySelectorAll('.btn-8')
+const divToColor_8 = document.querySelector('.div-to-color-8')
+
+btns_8.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        divToColor_8.style.backgroundColor = e.currentTarget.getAttribute("data-color")
+    })
+})
+
+// EXO 9
+const textToDisplay9 = document.querySelector('.text-to-display-9')
+const checkboxes = document.querySelectorAll('.checkbox')
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+        textToDisplay9.textContent = `${checkboxes[0].checked ? checkboxes[0].value : ''}${checkboxes[0].checked && checkboxes[1].checked ? ' - ' : ""}${checkboxes[1].checked ? checkboxes[1].value : ''}`
+    })
 })
