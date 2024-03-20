@@ -21,6 +21,16 @@
         ]
     },
     {
+        "title": "Grease",
+        "year": 1978,
+        "director": "Randal Kleiser",
+        "rate": 6,
+        "actors": [
+            "John Travolta",
+            "Olivia Newton-John"
+        ]
+    },
+    {
         "title": "Interstellar",
         "year": 2014,
         "director": "Christopher Nolan",

@@ -144,3 +144,23 @@ function getMovieByTitle(arr, titleParam) {
 
 
 // écrire une fonction qui prend en paramètre le tableau movies, le nom d'un acteur, et qui me retourne un tableau des films dans lesquels joue cet acteur
+
+// const res = getMoviesByActor(movies, "John Travolta")
+console.log(movies.filter(movie => movie.actors.includes('John Travolta')))
+
+function getMoviesByActor(arr, actorName) {
+    // const movies = []
+    // une première boucle pour parcourir tous les films
+    arr.forEach(movie => {
+        // movie.actors.forEach(actor => {
+        //     if (actor === actorName) {
+        //         movies.push(movie)
+        //     }
+        // })
+        if (movie.actors.includes(actorName)) movies.push(movie)
+    })
+    // une seconde boucle dans la première, pour parcourir tous les actors d'un film et voir si un des actors correspond au paramètre actorName
+
+    // return movies
+    return arr.filter(movie => movie.actors.includes(actorName))
+}
