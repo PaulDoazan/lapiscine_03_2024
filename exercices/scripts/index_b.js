@@ -114,3 +114,15 @@ function getMoviesByDirector(arr, directorParam) {
 }
 
 // -> retourne un nouveau tableau de tous les noms d'acteurs des films de ce realisateur
+
+
+
+
+// écrire une fonction qui prend en paramètre le tableau movies et un titre de film, et qui me retourne l'objet movie qui correspond au titre
+
+const movie = getMovieByTitle(movies, "Interstellar")
+console.log(movie)
+
+function getMovieByTitle(arr, title) {
+
+}
